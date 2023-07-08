@@ -67,23 +67,28 @@
         </tr>
       </table>
     </div>
+
+
     <script>
-      var isOperatorButtonClicked = false; // false
+      var isOperatorButtonClicked = false;
       let results = document.querySelector(".myresult");
-      var leftValue;
-      var rightValue;
+      var leftValue ="";
+      var rightValue ="";
       var operator = "";
+      var rightside = "";
 
       function showResult(elem) {
 
         results.innerHTML += elem.innerHTML;
 
-        if (isOperatorButtonClicked === true && elem.innerHTML!== '=') {
-          rightValue = elem.innerHTML;
-          rightValue = window.localStorage.setItem("rightValue", rightValue);
-          console.log("Right value ", elem.innerHTML);
-        }
+        if (isOperatorButtonClicked == true && elem.innerHTML != '=') {
+           rightside += elem.innerHTML;
+          rightValue = rightside; 
+          window.localStorage.setItem("rightValue", rightValue);
+          console.log("Right value ",rightside);
        
+        }
+         
         switch (elem.innerHTML) {
          
           case "x":
